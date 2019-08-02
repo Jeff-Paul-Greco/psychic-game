@@ -11,24 +11,34 @@ var remaining = 9;
 var winsNumber = document.getElementById("wins");
 var lossesNumber = document.getElementById("losses");
 var guessesLeft = document.getElementById("guesses-remaining");
-var guessesed = document.getElementById("guessesed");
+var guessed = document.getElementById("guessed");
 
 
 function gameStart() {
 
+    remaining = 9;
+    guessesLeft.textContent = "Guesses Remaining: " + remaining;
     var computerGuess = computerChoice[Math.floor(Math.random() * computerChoice.length)];
-    console.log(computerGuess)
+    
 
 document.onkeyup = function(event) { 
 
     var userGuess = event.key;
+    guessed.textContent = userGuess;
         
              if (userGuess === computerGuess) {
                  wins++;
-                 console.log(wins)
-             } else {
+                 winsNumber.textContent = "Wins: " + wins;
+                 gameStart();
+                 
+             } else if (remaining > 1) {
                  remaining--;
-                 console.log(remaining)
+                 guessesLeft.textContent = "Guesses Remaining: " + remaining;
+                 
+             } else {
+                 losses++;
+                 lossesNumber.textContent = "Losses: " + losses;
+                 gameStart();
              }
         
             }

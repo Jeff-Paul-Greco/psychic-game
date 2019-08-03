@@ -1,20 +1,30 @@
 
 body {
+    background-color: black;
     background-image: url("../images/background.jpg");
+    background-position: top top;
     background-size: cover;
+    background-repeat: no-repeat;
 }
 
 h1 {
+    font-family: "Comic Sans MS", cursive, sans-serif;
     font-size: 50px;
-    font-weight: bold;
+    font-weight: bolder;
     padding: 20px 0px 20px 0px;
     text-align: center;
+    color: rgb(143, 13, 143);
+    text-shadow: .5px .5px black;
 }
 
 p {
-    font-size: 20px;
-    line-height: 30px;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-size: 30px;
+    line-height: 40px;
     text-align: center;
+    font-weight:bold;
+    color: rgb(0, 184, 61);
+    text-shadow: 1px 1px black;
 }
 
 .container {
@@ -27,14 +37,38 @@ p {
 .float-right {
     float: right;
     margin-left: 5px;
+    width: auto;
 }
 
 #guessed {
     float: left;
-    position: relative;
     text-align: center;
+    position: relative;
 }
 
+@media only screen and (max-width: 768px) {
+
+    body {
+        background-position: 0% -35%;
+    }
+
+}
+
+@media only screen and (max-width: 640px) {
+
+    body {
+        background-position: 0% -45%;
+    } 
+
+    p {
+        font-size: 18px;
+    }
+
+    h1 {
+        font-size: 34px;
+    }
+
+}
 
 
 

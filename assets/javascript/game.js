@@ -18,44 +18,38 @@ function gameStart() {
 
     remaining = 9;
     guessesLeft.textContent = "Guesses Remaining: " + remaining;
+    guessed.textContent = "Your Guesses so Far: ";
     var computerGuess = computerChoice[Math.floor(Math.random() * computerChoice.length)];
     
+    document.onkeyup = function(event) { 
 
-document.onkeyup = function(event) { 
+        var userGuess = event.key;
+        var newDiv = document.createElement("div");
+        guessed.appendChild(newDiv);
+        newDiv.className += "float-right";
+        newDiv.textContent = userGuess + ", ";
+        
 
-    var userGuess = event.key;
-    guessed.textContent = userGuess;
-        
-             if (userGuess === computerGuess) {
-                 wins++;
-                 winsNumber.textContent = "Wins: " + wins;
-                 gameStart();
-                 
-             } else if (remaining > 1) {
-                 remaining--;
-                 guessesLeft.textContent = "Guesses Remaining: " + remaining;
-                 
-             } else {
-                 losses++;
-                 lossesNumber.textContent = "Losses: " + losses;
-                 gameStart();
-             }
-        
-            }
-        }
     
-
-
-
-
-
-
-   
-
-
-
-
-
+                if (userGuess === computerGuess) {
+                    wins++;
+                    winsNumber.textContent = "Wins: " + wins;
+                    gameStart();
+                    
+                } else if (remaining > 1) {
+                    remaining--;
+                    guessesLeft.textContent = "Guesses Remaining: " + remaining;
+                    
+                    
+                } else {
+                    losses++;
+                    lossesNumber.textContent = "Losses: " + losses;
+                    gameStart();
+                }
+            
+                }
+            }
+    
 
 
 gameStart();

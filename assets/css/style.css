@@ -1,4 +1,9 @@
 
+body {
+    background-image: url("../images/background.jpg");
+    background-size: cover;
+}
+
 h1 {
     font-size: 50px;
     font-weight: bold;
@@ -21,12 +26,18 @@ p {
 
 .float-right {
     float: right;
-    margin-left: 0px;
+    margin-left: 5px;
 }
 
 #guessed {
     float: left;
+    position: relative;
+    text-align: center;
 }
+
+
+
+
 
 
 

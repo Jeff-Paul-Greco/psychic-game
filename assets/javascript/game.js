@@ -27,7 +27,7 @@ function gameStart() {
         var newDiv = document.createElement("div");
         guessed.appendChild(newDiv);
         newDiv.className += "float-right";
-        newDiv.textContent = userGuess + ", ";
+        newDiv.textContent = " " + userGuess + ",";
         
 
     
